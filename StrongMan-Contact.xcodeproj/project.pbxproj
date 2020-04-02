@@ -3,20 +3,45 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0C476099243341C9002645C1 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C476098243341C9002645C1 /* AboutViewController.swift */; };
+		0C6E6D7A24349E2F00D97DF9 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C6E6D7724349E2F00D97DF9 /* Data.xcdatamodeld */; };
+		0C6E6D7D2434A02500D97DF9 /* StrongMan+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6E6D7B2434A02500D97DF9 /* StrongMan+CoreDataClass.swift */; };
+		0C6E6D7E2434A02500D97DF9 /* StrongMan+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6E6D7C2434A02500D97DF9 /* StrongMan+CoreDataProperties.swift */; };
+		0C7ADAD424347655009E1601 /* LicenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7ADAD324347655009E1601 /* LicenceViewController.swift */; };
+		0C84A4FE24322C5C00D7B14E /* StrongManTableAccessorButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C84A4FD24322C5C00D7B14E /* StrongManTableAccessorButtonView.swift */; };
+		0C8FC7382431CF4200859EB8 /* StrongTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8FC7372431CF4200859EB8 /* StrongTabBarController.swift */; };
+		0C8FC73A2431D29800859EB8 /* ToBeStrongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8FC7392431D29800859EB8 /* ToBeStrongViewController.swift */; };
+		0C8FC73C2431DE3E00859EB8 /* StrongManPresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8FC73B2431DE3E00859EB8 /* StrongManPresentViewController.swift */; };
 		0CAA1F86242DECF600A6825D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA1F85242DECF600A6825D /* AppDelegate.swift */; };
 		0CAA1F88242DECF600A6825D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA1F87242DECF600A6825D /* SceneDelegate.swift */; };
 		0CAA1F8A242DECF600A6825D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA1F89242DECF600A6825D /* ViewController.swift */; };
 		0CAA1F8D242DECF600A6825D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CAA1F8B242DECF600A6825D /* Main.storyboard */; };
 		0CAA1F8F242DECF800A6825D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CAA1F8E242DECF800A6825D /* Assets.xcassets */; };
 		0CAA1F92242DECF800A6825D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CAA1F90242DECF800A6825D /* LaunchScreen.storyboard */; };
+		0CAA1F9B242DEE2F00A6825D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 0CAA1F9A242DEE2F00A6825D /* SnapKit */; };
+		0CAA1F9D242DEE4C00A6825D /* StrongManData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA1F9C242DEE4C00A6825D /* StrongManData.swift */; };
+		0CAA1F9F242DEED100A6825D /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA1F9E242DEED100A6825D /* ContactViewController.swift */; };
+		0CAA1FA2242DF9D900A6825D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0CAA1FA4242DF9D900A6825D /* Localizable.strings */; };
+		0CD007462432F9E600AFB4C7 /* StrongManIntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD007452432F9E600AFB4C7 /* StrongManIntroductionViewController.swift */; };
+		0CF04FE62434B60D00CBDC63 /* PersistentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF04FE52434B60D00CBDC63 /* PersistentService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0CAA1F82242DECF600A6825D /* StrongMan-Contact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StrongMan-Contact.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C476098243341C9002645C1 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		0C6E6D7824349E2F00D97DF9 /* StrongMan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StrongMan.xcdatamodel; sourceTree = "<group>"; };
+		0C6E6D7924349E2F00D97DF9 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
+		0C6E6D7B2434A02500D97DF9 /* StrongMan+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StrongMan+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0C6E6D7C2434A02500D97DF9 /* StrongMan+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StrongMan+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0C7ADAD324347655009E1601 /* LicenceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenceViewController.swift; sourceTree = "<group>"; };
+		0C84A4FD24322C5C00D7B14E /* StrongManTableAccessorButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrongManTableAccessorButtonView.swift; sourceTree = "<group>"; };
+		0C8FC7372431CF4200859EB8 /* StrongTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrongTabBarController.swift; sourceTree = "<group>"; };
+		0C8FC7392431D29800859EB8 /* ToBeStrongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToBeStrongViewController.swift; sourceTree = "<group>"; };
+		0C8FC73B2431DE3E00859EB8 /* StrongManPresentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrongManPresentViewController.swift; sourceTree = "<group>"; };
+		0CAA1F82242DECF600A6825D /* StrongManContact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StrongManContact.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CAA1F85242DECF600A6825D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CAA1F87242DECF600A6825D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		0CAA1F89242DECF600A6825D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +49,13 @@
 		0CAA1F8E242DECF800A6825D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CAA1F91242DECF800A6825D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0CAA1F93242DECF800A6825D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CAA1F9C242DEE4C00A6825D /* StrongManData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrongManData.swift; sourceTree = "<group>"; };
+		0CAA1F9E242DEED100A6825D /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		0CAA1FA3242DF9D900A6825D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0CAA1FA5242DFA3C00A6825D /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		0CAA1FA6242DFA4400A6825D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		0CD007452432F9E600AFB4C7 /* StrongManIntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrongManIntroductionViewController.swift; sourceTree = "<group>"; };
+		0CF04FE52434B60D00CBDC63 /* PersistentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CAA1F9B242DEE2F00A6825D /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,7 +81,7 @@
 		0CAA1F83242DECF600A6825D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0CAA1F82242DECF600A6825D /* StrongMan-Contact.app */,
+				0CAA1F82242DECF600A6825D /* StrongManContact.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,6 +89,8 @@
 		0CAA1F84242DECF600A6825D /* StrongMan-Contact */ = {
 			isa = PBXGroup;
 			children = (
+				0C6E6D7B2434A02500D97DF9 /* StrongMan+CoreDataClass.swift */,
+				0C6E6D7C2434A02500D97DF9 /* StrongMan+CoreDataProperties.swift */,
 				0CAA1F85242DECF600A6825D /* AppDelegate.swift */,
 				0CAA1F87242DECF600A6825D /* SceneDelegate.swift */,
 				0CAA1F89242DECF600A6825D /* ViewController.swift */,
@@ -63,6 +98,18 @@
 				0CAA1F8E242DECF800A6825D /* Assets.xcassets */,
 				0CAA1F90242DECF800A6825D /* LaunchScreen.storyboard */,
 				0CAA1F93242DECF800A6825D /* Info.plist */,
+				0CAA1F9C242DEE4C00A6825D /* StrongManData.swift */,
+				0CAA1F9E242DEED100A6825D /* ContactViewController.swift */,
+				0CAA1FA4242DF9D900A6825D /* Localizable.strings */,
+				0C8FC7372431CF4200859EB8 /* StrongTabBarController.swift */,
+				0C8FC7392431D29800859EB8 /* ToBeStrongViewController.swift */,
+				0C8FC73B2431DE3E00859EB8 /* StrongManPresentViewController.swift */,
+				0C84A4FD24322C5C00D7B14E /* StrongManTableAccessorButtonView.swift */,
+				0CD007452432F9E600AFB4C7 /* StrongManIntroductionViewController.swift */,
+				0C476098243341C9002645C1 /* AboutViewController.swift */,
+				0C7ADAD324347655009E1601 /* LicenceViewController.swift */,
+				0C6E6D7724349E2F00D97DF9 /* Data.xcdatamodeld */,
+				0CF04FE52434B60D00CBDC63 /* PersistentService.swift */,
 			);
 			path = "StrongMan-Contact";
 			sourceTree = "<group>";
@@ -83,8 +130,11 @@
 			dependencies = (
 			);
 			name = "StrongMan-Contact";
+			packageProductDependencies = (
+				0CAA1F9A242DEE2F00A6825D /* SnapKit */,
+			);
 			productName = "StrongMan-Contact";
-			productReference = 0CAA1F82242DECF600A6825D /* StrongMan-Contact.app */;
+			productReference = 0CAA1F82242DECF600A6825D /* StrongManContact.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -109,8 +159,13 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
+				ja,
 			);
 			mainGroup = 0CAA1F79242DECF600A6825D;
+			packageReferences = (
+				0CAA1F99242DEE2F00A6825D /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 0CAA1F83242DECF600A6825D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CAA1F92242DECF800A6825D /* LaunchScreen.storyboard in Resources */,
+				0CAA1FA2242DF9D900A6825D /* Localizable.strings in Resources */,
 				0CAA1F8F242DECF800A6825D /* Assets.xcassets in Resources */,
 				0CAA1F8D242DECF600A6825D /* Main.storyboard in Resources */,
 			);
@@ -138,9 +194,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C7ADAD424347655009E1601 /* LicenceViewController.swift in Sources */,
 				0CAA1F8A242DECF600A6825D /* ViewController.swift in Sources */,
+				0CAA1F9D242DEE4C00A6825D /* StrongManData.swift in Sources */,
+				0C476099243341C9002645C1 /* AboutViewController.swift in Sources */,
+				0CF04FE62434B60D00CBDC63 /* PersistentService.swift in Sources */,
+				0C6E6D7E2434A02500D97DF9 /* StrongMan+CoreDataProperties.swift in Sources */,
+				0CD007462432F9E600AFB4C7 /* StrongManIntroductionViewController.swift in Sources */,
+				0C6E6D7D2434A02500D97DF9 /* StrongMan+CoreDataClass.swift in Sources */,
 				0CAA1F86242DECF600A6825D /* AppDelegate.swift in Sources */,
+				0C84A4FE24322C5C00D7B14E /* StrongManTableAccessorButtonView.swift in Sources */,
+				0C8FC73C2431DE3E00859EB8 /* StrongManPresentViewController.swift in Sources */,
+				0C8FC73A2431D29800859EB8 /* ToBeStrongViewController.swift in Sources */,
 				0CAA1F88242DECF600A6825D /* SceneDelegate.swift in Sources */,
+				0C6E6D7A24349E2F00D97DF9 /* Data.xcdatamodeld in Sources */,
+				0C8FC7382431CF4200859EB8 /* StrongTabBarController.swift in Sources */,
+				0CAA1F9F242DEED100A6825D /* ContactViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +232,16 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		0CAA1FA4242DF9D900A6825D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0CAA1FA3242DF9D900A6825D /* en */,
+				0CAA1FA5242DFA3C00A6825D /* zh-Hans */,
+				0CAA1FA6242DFA4400A6825D /* ja */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -170,6 +249,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -230,6 +310,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -292,7 +373,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rabbit.StrongMan-Contact";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = StrongManContact;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -310,7 +391,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rabbit.StrongMan-Contact";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = StrongManContact;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -338,6 +419,39 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0CAA1F99242DEE2F00A6825D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0CAA1F9A242DEE2F00A6825D /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0CAA1F99242DEE2F00A6825D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		0C6E6D7724349E2F00D97DF9 /* Data.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0C6E6D7824349E2F00D97DF9 /* StrongMan.xcdatamodel */,
+				0C6E6D7924349E2F00D97DF9 /* Data.xcdatamodel */,
+			);
+			currentVersion = 0C6E6D7824349E2F00D97DF9 /* StrongMan.xcdatamodel */;
+			path = Data.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0CAA1F7A242DECF600A6825D /* Project object */;
 }

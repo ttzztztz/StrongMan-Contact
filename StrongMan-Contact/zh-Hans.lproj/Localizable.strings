@@ -1,0 +1,31 @@
+/* 
+  Localizable.strings
+  StrongMan-Contact
+
+  Created by 杨子越 on 2020/3/27.
+  Copyright © 2020 Rabbit. All rights reserved.
+*/
+
+"StrongManContacts"="强者通讯录";
+"Frontend"="前端";
+"Backend"="后端";
+"Contacts"="通讯录";
+"ToBe"="成为强者";
+"StrongManDiscovery"="你发现了一位强者！";
+"IKnow"="我知道!";
+"Finish"="完成";
+"Introduction"="介绍";
+"Name"="姓名";
+"Mobile"="手机";
+"isStar"="星标";
+"About"="关于";
+"Licence"="协议";
+"Check For Update"="检测更新";
+"No Update"="无更新";
+"Please Update"="请更新";
+"Save"="保存";
+"Operation Successful"="操作成功";
+"Add"="添加";
+"Edit"="编辑";
+"Cancel"="取消";
+"Delete"="删除";
