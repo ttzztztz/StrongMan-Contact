@@ -34,17 +34,12 @@ class StrongManIntroductionViewController: UITableViewController {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let editAction = UIAlertAction(title: NSLocalizedString("Edit", comment: "编辑"), style: .default) { (_) in
-            
-        }
-
-        let deleteAction = UIAlertAction(title: NSLocalizedString("Delete", comment: "删除"), style: .destructive) { (_) in
-            
+            self.dismiss(animated: true) 
         }
         
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "取消"), style: .cancel)
         
         alert.addAction(editAction)
-        alert.addAction(deleteAction)
         
         alert.addAction(cancelAction)
         alert.popoverPresentationController?.barButtonItem = moreButton

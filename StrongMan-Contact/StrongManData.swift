@@ -15,11 +15,11 @@ import CoreData
 //}
 //
 
-struct StrongManGroup {
-    let groupName: String
-    var list: [StrongMan]
-    var isShow: Bool = true
-}
+//struct StrongManGroup {
+//    let groupName: String
+//    var list: [StrongMan]
+//    var isShow: Bool = true
+//}
 
 
 //var strongManList: [StrongManGroup] = [
@@ -34,39 +34,36 @@ struct StrongManGroup {
 
 
 class StrongManData {
-    static var strongManCount = 0
-    
     static func reloadData() {
         self.strongManList = readData()
     }
     
-    private static func readData() -> [StrongManGroup] {
+    private static func readData() -> [StrongMan] {
         let fetchRequest: NSFetchRequest<StrongMan> = StrongMan.fetchRequest()
         let sortDescriptor = NSSortDescriptor(key: "order", ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
         
-        var group = [
-            StrongManGroup(groupName: NSLocalizedString("Frontend", comment: "前端"), list: []),
-            StrongManGroup(groupName: NSLocalizedString("Backend", comment: "后端"), list: []),
-        ]
-        
-        self.strongManCount = 0
+        var strongManList: [StrongMan] = []
         
         do {
             let people = try PersistentService.context.fetch(fetchRequest)
-            for i in people.indices {
-                let groupId = people[i].group
-                group[Int(groupId)].list.append(people[i])
-                strongManCount += 1
-            }
+            strongManList = people
         } catch {
             fatalError(error.localizedDescription)
         }
         
-        return group
+        return strongManList
     }
 
-    static var strongManList: [StrongManGroup] = {
+    static var strongManList: [StrongMan] = {
         return readData()
     }()
+    
+    static func getGroupName(man: StrongMan) -> String {
+        if (man.group == 0) {
+            return NSLocalizedString("Frontend", comment: "前端")
+        } else {
+            return NSLocalizedString("Backend", comment: "后端")
+        }
+    }
 }

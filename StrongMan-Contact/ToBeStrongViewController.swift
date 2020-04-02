@@ -54,9 +54,9 @@ class ToBeStrongViewController: UITableViewController, UITextFieldDelegate, UIPi
         newStrongMan.group = Int16(groupId)
         newStrongMan.isStar = false
         newStrongMan.mobile = mobileInput.text ?? ""
-        newStrongMan.order = Int32(StrongManData.strongManCount)
+        newStrongMan.order = Int32(StrongManData.strongManList.count)
         
-        StrongManData.strongManList[groupId].list.append(newStrongMan)
+        StrongManData.strongManList.append(newStrongMan)
         PersistentService.saveContext()
         
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "listDidChange"), object: nil)

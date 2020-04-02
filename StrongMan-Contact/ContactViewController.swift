@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ContactViewController: UITableViewController, UISplitViewControllerDelegate {
+class ContactViewController: UITableViewController {
     let cellId = "hzytqlCell"
     
     @objc func handleMoreButtonClick() {
@@ -45,36 +45,34 @@ class ContactViewController: UITableViewController, UISplitViewControllerDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        splitViewController?.delegate = self
         navigationItem.title = NSLocalizedString("StrongManContacts", comment: "强者通讯录")
         navigationItem.rightBarButtonItem = moreButton
         navigationController?.navigationBar.prefersLargeTitles = true
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         
-         NotificationCenter.default.addObserver(self, selector: #selector(refreshData), name: NSNotification.Name(rawValue: "listDidChange"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshData), name: NSNotification.Name(rawValue: "listDidChange"), object: nil)
     }
     
     @objc func refreshData() {
-        print(1111)
         StrongManData.reloadData()
         self.tableView.reloadData()
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return StrongManData.strongManList[section].list.count
+        return StrongManData.strongManList.count
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return StrongManData.strongManList.count
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath)
-        let strongManList = StrongManData.strongManList
+        let strongMan = StrongManData.strongManList[indexPath.row]
         
-        let attributedString = NSMutableAttributedString(string: strongManList[indexPath.section].list[indexPath.row].name ?? "", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16)])
-        attributedString.append(NSAttributedString(string: "\n \(strongManList[indexPath.section].groupName)", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13), NSAttributedString.Key.foregroundColor: UIColor.secondaryLabel]))
+        let attributedString = NSMutableAttributedString(string: strongMan.name ?? "", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16)])
+        attributedString.append(NSAttributedString(string: "\n \(StrongManData.getGroupName(man: strongMan))", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13), NSAttributedString.Key.foregroundColor: UIColor.secondaryLabel]))
         
         cell.textLabel?.attributedText = attributedString
         cell.textLabel?.numberOfLines = 2
@@ -82,7 +80,7 @@ class ContactViewController: UITableViewController, UISplitViewControllerDelegat
         let infoButton = StrongManTableAccessorButtonView(type: .system)
         infoButton.setImage(UIImage(systemName: "info.circle"), for: .normal)
         infoButton.sizeToFit()
-        infoButton.strongManName = strongManList[indexPath.section].list[indexPath.row].name
+        infoButton.strongManName = strongMan.name
         infoButton.addTarget(self, action: #selector(showInfoView), for: .touchUpInside)
         
         cell.accessoryView = infoButton
@@ -99,13 +97,13 @@ class ContactViewController: UITableViewController, UISplitViewControllerDelegat
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let controller = StrongManIntroductionViewController()
-        controller.data = StrongManData.strongManList[indexPath.section].list[indexPath.row]
+        controller.data = StrongManData.strongManList[indexPath.row]
+        let navigationCntroller = UINavigationController(rootViewController: controller)
         
-        self.splitViewController?.showDetailViewController(controller, sender: self)
+        splitViewController?.showDetailViewController(navigationCntroller, sender: self)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 58
     }
-    
 }

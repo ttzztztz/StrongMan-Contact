@@ -10,6 +10,15 @@ import UIKit
 import SnapKit
 
 class AboutViewController: UIViewController {
+    let spinner = UIActivityIndicatorView(style: .large)
+    
+    let iconView: UIImageView = {
+        let image = UIImageView(image: UIImage(named: "hzy"))
+        
+        image.sizeToFit()
+        return image
+    }()
+    
     let licenceButton: UIButton = {
         let button = UIButton(type: .system)
         
@@ -34,6 +43,8 @@ class AboutViewController: UIViewController {
     }
     
     @objc func handleCheckForUpdate() {
+        spinner.startAnimating()
+        
         let queue = DispatchQueue.global(qos: .default)
         queue.async {
             let checkResult = self.checkForUpdate()
@@ -43,6 +54,7 @@ class AboutViewController: UIViewController {
                 } else {
                     self.checkForUpdateButton.setTitle(NSLocalizedString("No Update", comment: "无更新"), for: .normal)
                 }
+                self.spinner.stopAnimating()
             }
         }
     }
@@ -59,12 +71,22 @@ class AboutViewController: UIViewController {
         
         view.backgroundColor = .systemBackground
         
-        let stackView = UIStackView(arrangedSubviews: [licenceButton, checkForUpdateButton])
+        let stackView = UIStackView(arrangedSubviews: [iconView, licenceButton, checkForUpdateButton])
         stackView.axis = .vertical
         view.addSubview(stackView)
         
         stackView.snp.makeConstraints { (make) -> Void in
             make.center.equalTo(view)
+        }
+        
+        iconView.snp.makeConstraints { (make) -> Void in
+            make.height.equalTo(200)
+            make.width.equalTo(200)
+        }
+        
+        view.addSubview(spinner)
+        spinner.snp.makeConstraints { (make) -> Void in
+            make.edges.equalToSuperview()
         }
     }
 }

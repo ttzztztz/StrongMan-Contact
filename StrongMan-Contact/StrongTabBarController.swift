@@ -8,12 +8,13 @@
 
 import UIKit
 
-class StrongTabBarController: UITabBarController {
+class StrongTabBarController: UITabBarController, UISplitViewControllerDelegate {
     lazy var contactSplitViewController: UISplitViewController = {
         let navigationController = UINavigationController(rootViewController: ContactViewController())
         
         let contactSplit = UISplitViewController()
-        contactSplit.viewControllers = [navigationController]
+        contactSplit.delegate = self
+        contactSplit.viewControllers = [navigationController, AboutViewController()]
         
         contactSplit.tabBarItem = UITabBarItem(title: NSLocalizedString("Contacts", comment: "通讯录"), image: UIImage(systemName: "book"), selectedImage: UIImage(systemName: "book.fill"))
         contactSplit.preferredDisplayMode = .allVisible
@@ -43,5 +44,9 @@ class StrongTabBarController: UITabBarController {
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
+    }
+    
+    func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
+        return true
     }
 }
