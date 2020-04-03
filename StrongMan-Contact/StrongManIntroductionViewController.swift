@@ -11,12 +11,12 @@ import UIKit
 class StrongManIntroductionViewController: UITableViewController {
     let cellId = "introductionItem"
     let fields = [
-        [NSLocalizedString("Name", comment: "姓名"), NSLocalizedString("Mobile", comment: "电话")],
+        [NSLocalizedString("Name", comment: "姓名"), NSLocalizedString("Mobile", comment: "电话"), NSLocalizedString("Group", comment: "组别")],
         [NSLocalizedString("isStar", comment: "星标")]
     ]
     
     private var info = [
-        ["", ""],
+        ["", "", ""],
         [""]
     ]
     
@@ -44,9 +44,25 @@ class StrongManIntroductionViewController: UITableViewController {
             self.present(navigationView, animated: true)
         }
         
+        let deleteAction = UIAlertAction(title: NSLocalizedString("Delete", comment: "删除"), style: .destructive) { (_) in
+//            let newView = AboutViewController()
+//            let navigationView = UINavigationController(rootViewController: newView)
+            
+            if self.splitViewController == nil {
+                return
+            }
+            
+            if self.splitViewController!.isCollapsed { // iphone
+                self.navigationController?.popViewController(animated: true)
+            } else { // ipad
+                
+            }
+        }
+        
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "取消"), style: .cancel)
         
         alert.addAction(editAction)
+        alert.addAction(deleteAction)
         
         alert.addAction(cancelAction)
         alert.popoverPresentationController?.barButtonItem = moreButton
@@ -113,6 +129,7 @@ class StrongManIntroductionViewController: UITableViewController {
         let data = StrongManData.strongManList[editIndex]
         info[0][0] = data.name ?? ""
         info[0][1] = data.mobile ?? ""
+        info[0][2] = StrongManData.getGroupName(man: data)
         info[1][0] = (data.isStar ? "🌟" : "") ?? ""
     }
     

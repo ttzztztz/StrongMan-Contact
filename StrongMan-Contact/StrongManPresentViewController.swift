@@ -95,10 +95,7 @@ class StrongManPresentViewController: UIViewController {
         }
         
         bigStar.snp.makeConstraints { (make) -> Void in
-//            make.top.equalTo(stackView.snp.top).offset(36)
-//            make.centerX.equalTo(view.snp.centerX)
             make.height.equalTo(196)
-//            make.width.equalTo(196)
         }
         
         view.backgroundColor = .systemBackground

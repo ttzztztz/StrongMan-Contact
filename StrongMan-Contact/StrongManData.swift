@@ -32,7 +32,6 @@ import CoreData
 //    ]),
 //]
 
-
 class StrongManData {
     static func reloadData() {
         self.strongManList = readData()

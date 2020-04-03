@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0C476099243341C9002645C1 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C476098243341C9002645C1 /* AboutViewController.swift */; };
+		0C6941E72436DC4C001B37FF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C6941E32436D89C001B37FF /* Info.plist */; };
 		0C6E6D7A24349E2F00D97DF9 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C6E6D7724349E2F00D97DF9 /* Data.xcdatamodeld */; };
 		0C6E6D7D2434A02500D97DF9 /* StrongMan+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6E6D7B2434A02500D97DF9 /* StrongMan+CoreDataClass.swift */; };
 		0C6E6D7E2434A02500D97DF9 /* StrongMan+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6E6D7C2434A02500D97DF9 /* StrongMan+CoreDataProperties.swift */; };
@@ -32,6 +33,7 @@
 
 /* Begin PBXFileReference section */
 		0C476098243341C9002645C1 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		0C6941E82436DC96001B37FF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Info.plist; sourceTree = "<group>"; };
 		0C6E6D7824349E2F00D97DF9 /* StrongMan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StrongMan.xcdatamodel; sourceTree = "<group>"; };
 		0C6E6D7924349E2F00D97DF9 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
 		0C6E6D7B2434A02500D97DF9 /* StrongMan+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StrongMan+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -48,7 +50,6 @@
 		0CAA1F8C242DECF600A6825D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0CAA1F8E242DECF800A6825D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CAA1F91242DECF800A6825D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		0CAA1F93242DECF800A6825D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CAA1F9C242DEE4C00A6825D /* StrongManData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrongManData.swift; sourceTree = "<group>"; };
 		0CAA1F9E242DEED100A6825D /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		0CAA1FA3242DF9D900A6825D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -97,7 +98,7 @@
 				0CAA1F8B242DECF600A6825D /* Main.storyboard */,
 				0CAA1F8E242DECF800A6825D /* Assets.xcassets */,
 				0CAA1F90242DECF800A6825D /* LaunchScreen.storyboard */,
-				0CAA1F93242DECF800A6825D /* Info.plist */,
+				0C6941E32436D89C001B37FF /* Info.plist */,
 				0CAA1F9C242DEE4C00A6825D /* StrongManData.swift */,
 				0CAA1F9E242DEED100A6825D /* ContactViewController.swift */,
 				0CAA1FA4242DF9D900A6825D /* Localizable.strings */,
@@ -183,6 +184,7 @@
 				0CAA1F92242DECF800A6825D /* LaunchScreen.storyboard in Resources */,
 				0CAA1FA2242DF9D900A6825D /* Localizable.strings in Resources */,
 				0CAA1F8F242DECF800A6825D /* Assets.xcassets in Resources */,
+				0C6941E72436DC4C001B37FF /* Info.plist in Resources */,
 				0CAA1F8D242DECF600A6825D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,6 +218,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		0C6941E32436D89C001B37FF /* Info.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0C6941E82436DC96001B37FF /* en */,
+			);
+			name = Info.plist;
+			sourceTree = "<group>";
+		};
 		0CAA1F8B242DECF600A6825D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -367,7 +377,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y6M6AV4456;
-				INFOPLIST_FILE = "StrongMan-Contact/Info.plist";
+				INFOPLIST_FILE = "StrongMan-Contact/en.lproj/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -385,7 +395,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y6M6AV4456;
-				INFOPLIST_FILE = "StrongMan-Contact/Info.plist";
+				INFOPLIST_FILE = "StrongMan-Contact/en.lproj/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

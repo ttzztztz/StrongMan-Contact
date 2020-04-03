@@ -22,13 +22,6 @@ class StrongTabBarController: UITabBarController, UISplitViewControllerDelegate 
         return contactSplit
     }()
     
-//    let toBeStrongManController: UINavigationController = {
-//        let strong = UINavigationController(rootViewController: ToBeStrongViewController())
-//        strong.tabBarItem = UITabBarItem(title: NSLocalizedString("ToBe", comment: "成为强者"), image: UIImage(systemName: "plus.circle"), selectedImage: UIImage(systemName: "plus.circle.fill"))
-//
-//        return strong
-//    }()
-    
     let aboutController: UIViewController = {
         let about = UINavigationController(rootViewController: AboutViewController())
         
@@ -48,5 +41,16 @@ class StrongTabBarController: UITabBarController, UISplitViewControllerDelegate 
     
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController: UIViewController, onto primaryViewController: UIViewController) -> Bool {
         return true
+    }
+    
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            let alert = UIAlertController(title: NSLocalizedString("Hello", comment: "你好"), message: NSLocalizedString("Hello", comment: "你好"), preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default)
+            alert.addAction(okAction)
+            
+            self.present(alert, animated: true)
+        }
     }
 }

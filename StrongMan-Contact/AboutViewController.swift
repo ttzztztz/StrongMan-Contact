@@ -8,8 +8,14 @@
 
 import UIKit
 import SnapKit
+import LocalAuthentication
 
 class AboutViewController: UIViewController {
+    let authContext: LAContext = {
+        let context = LAContext()
+        context.localizedCancelTitle = NSLocalizedString("Enter Password", comment: "输入密码")
+        return context
+    }()
     let spinner = UIActivityIndicatorView(style: .large)
     
     let iconView: UIImageView = {
@@ -37,9 +43,48 @@ class AboutViewController: UIViewController {
         return button
     }()
     
+    let authButton: UIButton = {
+        let button = UIButton(type: .system)
+        
+        button.setTitle(NSLocalizedString("Auth", comment: "认证"), for: .normal)
+        button.addTarget(self, action: #selector(handleAuth), for: .touchUpInside)
+        
+        return button
+    }()
+    
     func checkForUpdate() -> Bool {
         Thread.sleep(forTimeInterval: 5)
         return arc4random() % 2 == 1
+    }
+    
+    @objc func handleAuth() {
+        var error: NSError?
+        if authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
+            authContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: NSLocalizedString("Unlock more contents", comment: "解锁更多内容")) { (success, err) in
+                if success {
+                    DispatchQueue.main.async {
+                        let alert = UIAlertController(title: NSLocalizedString("StrongManContacts", comment: "强者通讯录"), message: NSLocalizedString("Operation Successful", comment: "操作成功"), preferredStyle: .alert)
+                        
+                        let okAction = UIAlertAction(title: "OK", style: .default)
+                        alert.addAction(okAction)
+                        
+                        self.present(alert, animated: true)
+                    }
+                    
+                } else {
+                    DispatchQueue.main.async {
+                        let alert = UIAlertController(title: NSLocalizedString("StrongManContacts", comment: "强者通讯录"), message: err?.localizedDescription, preferredStyle: .alert)
+                        
+                        let okAction = UIAlertAction(title: "OK", style: .default)
+                        alert.addAction(okAction)
+                        
+                        self.present(alert, animated: true)
+                    }
+                }
+            }
+        } else {
+            print(error!)
+        }
     }
     
     @objc func handleCheckForUpdate() {
@@ -71,7 +116,7 @@ class AboutViewController: UIViewController {
         
         view.backgroundColor = .systemBackground
         
-        let stackView = UIStackView(arrangedSubviews: [iconView, licenceButton, checkForUpdateButton])
+        let stackView = UIStackView(arrangedSubviews: [iconView, licenceButton, checkForUpdateButton, authButton])
         stackView.axis = .vertical
         view.addSubview(stackView)
         

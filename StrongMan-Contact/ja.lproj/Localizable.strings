@@ -31,3 +31,8 @@
 "Cancel"="キャンセル";
 "Delete"="削除";
 "ConfirmDelete"="この強者を削除してもよろしいですか？このアクションは、後でやり直すことはできません。";
+"Hello"="こんにちは！";
+"Group"="グループ";
+"Auth"="認定";
+"Enter Password"="パスワードを入力する";
+"Unlock more contents"="🔓より多くのコンテンツをアンロック";

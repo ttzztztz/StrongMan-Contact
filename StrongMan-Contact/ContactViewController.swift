@@ -11,6 +11,16 @@ import UIKit
 class ContactViewController: UITableViewController {
     let cellId = "hzytqlCell"
     
+    func setToEditMode() {
+        navigationItem.rightBarButtonItem = finishButton
+        self.tableView.setEditing(!self.tableView.isEditing, animated: true)
+    }
+    
+    @objc func setFromEditMode() {
+        navigationItem.rightBarButtonItem = moreButton
+        self.tableView.setEditing(!self.tableView.isEditing, animated: true)
+    }
+    
     @objc func handleMoreButtonClick() {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
@@ -22,7 +32,7 @@ class ContactViewController: UITableViewController {
         }
         
         let editAction = UIAlertAction(title: NSLocalizedString("Edit", comment: "编辑"), style: .default) { (_) in
-            
+            self.setToEditMode()
         }
         
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "取消"), style: .cancel)
@@ -41,6 +51,34 @@ class ContactViewController: UITableViewController {
         
         return item
     }()
+    
+    lazy var finishButton: UIBarButtonItem = {
+        let item = UIBarButtonItem(title: NSLocalizedString("Finish", comment: "完成"), style: .done, target: self, action: #selector(setFromEditMode))
+        
+        return item
+    }()
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let previousIndex = sourceIndexPath.row, newIndex = destinationIndexPath.row
+        
+        let previousStrongMan = StrongManData.strongManList[previousIndex], newStrongMan = StrongManData.strongManList[newIndex]
+        
+        previousStrongMan.order = Int32(newIndex)
+        newStrongMan.order = Int32(previousIndex)
+        PersistentService.saveContext()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
