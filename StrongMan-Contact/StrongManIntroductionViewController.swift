@@ -14,27 +14,34 @@ class StrongManIntroductionViewController: UITableViewController {
         [NSLocalizedString("Name", comment: "姓名"), NSLocalizedString("Mobile", comment: "电话")],
         [NSLocalizedString("isStar", comment: "星标")]
     ]
-    var info = [
+    
+    private var info = [
         ["", ""],
         [""]
     ]
-    var data: StrongMan? {
-        didSet {
-            if data == nil {
-                return
-            }
-            
-            info[0][0] = data?.name ?? ""
-            info[0][1] = data?.mobile ?? ""
-            info[1][0] = (data?.isStar ?? false ? "🌟" : "") ?? ""
-        }
+    
+    private var editIndex: Int
+    init(editIndex: Int) {
+        self.editIndex = editIndex
+        
+        super.init(style: .plain)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     @objc func handleMoreButtonClick() {
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let editAction = UIAlertAction(title: NSLocalizedString("Edit", comment: "编辑"), style: .default) { (_) in
-            self.dismiss(animated: true) 
+            let editView = ToBeStrongViewController()
+            let navigationView = UINavigationController(rootViewController: editView)
+            
+            let data = StrongManData.strongManList[self.editIndex]
+            editView.setToEditMode(index: self.editIndex, data: data)
+            
+            self.present(navigationView, animated: true)
         }
         
         let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "取消"), style: .cancel)
@@ -54,6 +61,8 @@ class StrongManIntroductionViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        handleRefreshData()
         
         navigationItem.title = NSLocalizedString("Introduction", comment: "介绍")
         navigationItem.rightBarButtonItem = moreButton
@@ -90,5 +99,25 @@ class StrongManIntroductionViewController: UITableViewController {
         cell!.detailTextLabel?.text = info[indexPath.section][indexPath.row]
         
         return cell!
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(handleObserver), name: NSNotification.Name(rawValue: "editStrongMan"), object: nil)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func handleRefreshData() {
+        let data = StrongManData.strongManList[editIndex]
+        info[0][0] = data.name ?? ""
+        info[0][1] = data.mobile ?? ""
+        info[1][0] = (data.isStar ? "🌟" : "") ?? ""
+    }
+    
+    @objc func handleObserver() {
+        handleRefreshData()
+        tableView.reloadData()
     }
 }

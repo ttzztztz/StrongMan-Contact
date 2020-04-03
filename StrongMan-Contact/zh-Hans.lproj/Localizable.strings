@@ -10,7 +10,8 @@
 "Frontend"="前端";
 "Backend"="后端";
 "Contacts"="通讯录";
-"ToBe"="成为强者";
+"ToBe"="添加强者";
+"EditStrongMan"="编辑强者";
 "StrongManDiscovery"="你发现了一位强者！";
 "IKnow"="我知道!";
 "Finish"="完成";
@@ -29,3 +30,4 @@
 "Edit"="编辑";
 "Cancel"="取消";
 "Delete"="删除";
+"ConfirmDelete"="你确定要删除这个强者吗？此操作不可逆。";

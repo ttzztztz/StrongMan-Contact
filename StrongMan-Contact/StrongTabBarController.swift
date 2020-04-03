@@ -14,7 +14,7 @@ class StrongTabBarController: UITabBarController, UISplitViewControllerDelegate 
         
         let contactSplit = UISplitViewController()
         contactSplit.delegate = self
-        contactSplit.viewControllers = [navigationController, AboutViewController()]
+        contactSplit.viewControllers = [navigationController, UINavigationController(rootViewController: AboutViewController())]
         
         contactSplit.tabBarItem = UITabBarItem(title: NSLocalizedString("Contacts", comment: "通讯录"), image: UIImage(systemName: "book"), selectedImage: UIImage(systemName: "book.fill"))
         contactSplit.preferredDisplayMode = .allVisible

@@ -8,7 +8,26 @@
 
 import UIKit
 
+enum ToBeStrongViewControllerType {
+    case Add
+    case Edit
+}
+
 class ToBeStrongViewController: UITableViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    var type: ToBeStrongViewControllerType = .Add
+    var editIndex: Int = -1
+    
+    func setToEditMode(index: Int, data: StrongMan) {
+        type = .Edit
+        editIndex = index
+        navigationItem.title = NSLocalizedString("EditStrongMan", comment: "编辑强者")
+        
+        nameInput.text = data.name
+        mobileInput.text = data.mobile
+        pickerInput.selectRow(Int(data.group), inComponent: 0, animated: true)
+    }
+    
     let cellId = "toBeStrong"
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -48,18 +67,29 @@ class ToBeStrongViewController: UITableViewController, UITextFieldDelegate, UIPi
     
     @objc func handleSave() {
         let groupId = pickerInput.selectedRow(inComponent: 0)
+        if (type == .Add) {
+            let newStrongMan = StrongMan(context: PersistentService.context)
+            newStrongMan.name = nameInput.text ?? ""
+            newStrongMan.group = Int16(groupId)
+            newStrongMan.isStar = false
+            newStrongMan.mobile = mobileInput.text ?? ""
+            newStrongMan.order = Int32(StrongManData.strongManList.count)
+            
+            StrongManData.strongManList.append(newStrongMan)
+        } else if (type == .Edit) {
+            let newStrongMan = StrongManData.strongManList[editIndex]
+            
+            newStrongMan.name = nameInput.text ?? ""
+            newStrongMan.group = Int16(groupId)
+            newStrongMan.mobile = mobileInput.text ?? ""
+        }
         
-        let newStrongMan = StrongMan(context: PersistentService.context)
-        newStrongMan.name = nameInput.text ?? ""
-        newStrongMan.group = Int16(groupId)
-        newStrongMan.isStar = false
-        newStrongMan.mobile = mobileInput.text ?? ""
-        newStrongMan.order = Int32(StrongManData.strongManList.count)
-        
-        StrongManData.strongManList.append(newStrongMan)
         PersistentService.saveContext()
-        
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "listDidChange"), object: nil)
+        
+        if (type == .Edit) {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "editStrongMan"), object: nil)
+        }
         
         let alert = UIAlertController(title: NSLocalizedString("StrongManContacts", comment: "通讯录"), message: NSLocalizedString("Operation Successful", comment: "操作成功"), preferredStyle: .alert)
         
@@ -89,7 +119,9 @@ class ToBeStrongViewController: UITableViewController, UITextFieldDelegate, UIPi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = NSLocalizedString("ToBe", comment: "成为强者")
+        if (type == .Add) {
+            navigationItem.title = NSLocalizedString("ToBe", comment: "成为强者")
+        }
         navigationController?.navigationBar.prefersLargeTitles = false
         
         navigationItem.leftBarButtonItem = cancelNavButton

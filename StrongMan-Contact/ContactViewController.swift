@@ -50,7 +50,6 @@ class ContactViewController: UITableViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(refreshData), name: NSNotification.Name(rawValue: "listDidChange"), object: nil)
     }
     
@@ -96,8 +95,7 @@ class ContactViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let controller = StrongManIntroductionViewController()
-        controller.data = StrongManData.strongManList[indexPath.row]
+        let controller = StrongManIntroductionViewController(editIndex: indexPath.row)
         let navigationCntroller = UINavigationController(rootViewController: controller)
         
         splitViewController?.showDetailViewController(navigationCntroller, sender: self)
@@ -105,5 +103,41 @@ class ContactViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 58
+    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteAction = UIContextualAction(style: .destructive, title: NSLocalizedString("Delete", comment: "删除")) { (_, _, finished) -> Void in
+            
+            let confirmAlert = UIAlertController(title: NSLocalizedString("StrongManContacts", comment: "强者通讯录"), message: NSLocalizedString("ConfirmDelete", comment: "删除确认"), preferredStyle: .alert)
+            
+            let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: "取消"), style: .cancel)
+            let confirmAction = UIAlertAction(title: NSLocalizedString("Delete", comment: "删除"), style: .destructive) { (action) -> Void in
+                
+                let obj = StrongManData.strongManList[indexPath.row]
+                PersistentService.context.delete(obj)
+                PersistentService.saveContext()
+                
+                StrongManData.strongManList.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .right)
+                finished(true)
+            }
+            
+            confirmAlert.addAction(cancelAction)
+            confirmAlert.addAction(confirmAction)
+            self.present(confirmAlert, animated: true)
+        }
+        
+        let editAction = UIContextualAction(style: .normal, title: NSLocalizedString("Edit", comment: "编辑")) { (_, _, _) -> Void in
+            let editView = ToBeStrongViewController()
+            let navigationView = UINavigationController(rootViewController: editView)
+            
+            let data = StrongManData.strongManList[indexPath.row]
+            editView.setToEditMode(index: indexPath.row, data: data)
+            
+            self.present(navigationView, animated: true)
+        }
+        
+        let actions = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+        return actions
     }
 }

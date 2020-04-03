@@ -10,8 +10,9 @@
 "Frontend"="フロントエンド";
 "Backend"="バックエンド";
 "Contacts"="連絡先";
-"ToBe"="強くなる";
-"StrongManDiscovery"="あなたは一人の強な男を発見しました！";
+"ToBe"="強者を追加";
+"EditStrongMan"="強者を編集";
+"StrongManDiscovery"="あなたは一人の強者を発見しました！";
 "IKnow"="分かりました！";
 "Finish"="完了";
 "Introduction"="情報";
@@ -29,3 +30,4 @@
 "Edit"="編集";
 "Cancel"="キャンセル";
 "Delete"="削除";
+"ConfirmDelete"="この強者を削除してもよろしいですか？このアクションは、後でやり直すことはできません。";
