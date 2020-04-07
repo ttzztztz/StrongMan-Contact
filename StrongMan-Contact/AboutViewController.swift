@@ -11,11 +11,6 @@ import SnapKit
 import LocalAuthentication
 
 class AboutViewController: UIViewController {
-    let authContext: LAContext = {
-        let context = LAContext()
-        context.localizedCancelTitle = NSLocalizedString("Enter Password", comment: "输入密码")
-        return context
-    }()
     let spinner = UIActivityIndicatorView(style: .large)
     
     let iconView: UIImageView = {
@@ -58,6 +53,12 @@ class AboutViewController: UIViewController {
     }
     
     @objc func handleAuth() {
+        let authContext: LAContext = {
+            let context = LAContext()
+            context.localizedCancelTitle = NSLocalizedString("Enter Password", comment: "输入密码")
+            return context
+        }()
+        
         var error: NSError?
         if authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) {
             authContext.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: NSLocalizedString("Unlock more contents", comment: "解锁更多内容")) { (success, err) in

@@ -17,6 +17,7 @@
 		0C8FC7382431CF4200859EB8 /* StrongTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8FC7372431CF4200859EB8 /* StrongTabBarController.swift */; };
 		0C8FC73A2431D29800859EB8 /* ToBeStrongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8FC7392431D29800859EB8 /* ToBeStrongViewController.swift */; };
 		0C8FC73C2431DE3E00859EB8 /* StrongManPresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8FC73B2431DE3E00859EB8 /* StrongManPresentViewController.swift */; };
+		0C998491243C1500004FD0AA /* Motion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C998490243C1500004FD0AA /* Motion.swift */; };
 		0CAA1F86242DECF600A6825D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA1F85242DECF600A6825D /* AppDelegate.swift */; };
 		0CAA1F88242DECF600A6825D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA1F87242DECF600A6825D /* SceneDelegate.swift */; };
 		0CAA1F8A242DECF600A6825D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA1F89242DECF600A6825D /* ViewController.swift */; };
@@ -43,6 +44,7 @@
 		0C8FC7372431CF4200859EB8 /* StrongTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrongTabBarController.swift; sourceTree = "<group>"; };
 		0C8FC7392431D29800859EB8 /* ToBeStrongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToBeStrongViewController.swift; sourceTree = "<group>"; };
 		0C8FC73B2431DE3E00859EB8 /* StrongManPresentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrongManPresentViewController.swift; sourceTree = "<group>"; };
+		0C998490243C1500004FD0AA /* Motion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motion.swift; sourceTree = "<group>"; };
 		0CAA1F82242DECF600A6825D /* StrongManContact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StrongManContact.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CAA1F85242DECF600A6825D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CAA1F87242DECF600A6825D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				0C7ADAD324347655009E1601 /* LicenceViewController.swift */,
 				0C6E6D7724349E2F00D97DF9 /* Data.xcdatamodeld */,
 				0CF04FE52434B60D00CBDC63 /* PersistentService.swift */,
+				0C998490243C1500004FD0AA /* Motion.swift */,
 			);
 			path = "StrongMan-Contact";
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C998491243C1500004FD0AA /* Motion.swift in Sources */,
 				0C7ADAD424347655009E1601 /* LicenceViewController.swift in Sources */,
 				0CAA1F8A242DECF600A6825D /* ViewController.swift in Sources */,
 				0CAA1F9D242DEE4C00A6825D /* StrongManData.swift in Sources */,

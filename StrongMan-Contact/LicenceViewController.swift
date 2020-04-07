@@ -31,7 +31,7 @@ class LicenceViewController: UIViewController {
         
         view.addSubview(licenceTextView)
         licenceTextView.snp.makeConstraints { (make) -> Void in
-            make.edges.equalToSuperview()
+            make.edges.equalTo(view.safeAreaLayoutGuide)
         }
     }
 }

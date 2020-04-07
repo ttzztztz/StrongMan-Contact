@@ -29,10 +29,19 @@ class StrongTabBarController: UITabBarController, UISplitViewControllerDelegate 
         return about
     }()
     
+    let motionController: UIViewController = {
+        let motion = MotionViewController()
+        
+        let navController = UINavigationController(rootViewController: motion)
+        navController.tabBarItem = UITabBarItem(title: "Motion", image: UIImage(systemName: "flame"), selectedImage: UIImage(systemName: "flame.fill"))
+        
+        return navController
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.viewControllers = [contactSplitViewController, aboutController]
+        self.viewControllers = [contactSplitViewController, aboutController, motionController]
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -52,5 +61,9 @@ class StrongTabBarController: UITabBarController, UISplitViewControllerDelegate 
             
             self.present(alert, animated: true)
         }
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        self.view.invalidateIntrinsicContentSize()
     }
 }
