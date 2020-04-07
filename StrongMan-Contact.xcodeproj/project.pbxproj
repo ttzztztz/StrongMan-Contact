@@ -17,7 +17,7 @@
 		0C8FC7382431CF4200859EB8 /* StrongTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8FC7372431CF4200859EB8 /* StrongTabBarController.swift */; };
 		0C8FC73A2431D29800859EB8 /* ToBeStrongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8FC7392431D29800859EB8 /* ToBeStrongViewController.swift */; };
 		0C8FC73C2431DE3E00859EB8 /* StrongManPresentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8FC73B2431DE3E00859EB8 /* StrongManPresentViewController.swift */; };
-		0C998491243C1500004FD0AA /* Motion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C998490243C1500004FD0AA /* Motion.swift */; };
+		0C998491243C1500004FD0AA /* MotionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C998490243C1500004FD0AA /* MotionViewController.swift */; };
 		0CAA1F86242DECF600A6825D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA1F85242DECF600A6825D /* AppDelegate.swift */; };
 		0CAA1F88242DECF600A6825D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA1F87242DECF600A6825D /* SceneDelegate.swift */; };
 		0CAA1F8A242DECF600A6825D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAA1F89242DECF600A6825D /* ViewController.swift */; };
@@ -30,6 +30,8 @@
 		0CAA1FA2242DF9D900A6825D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0CAA1FA4242DF9D900A6825D /* Localizable.strings */; };
 		0CD007462432F9E600AFB4C7 /* StrongManIntroductionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CD007452432F9E600AFB4C7 /* StrongManIntroductionViewController.swift */; };
 		0CF04FE62434B60D00CBDC63 /* PersistentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF04FE52434B60D00CBDC63 /* PersistentService.swift */; };
+		0CFE2E5D243C5B2F00FFF46A /* YourLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFE2E5C243C5B2F00FFF46A /* YourLocationViewController.swift */; };
+		0CFE2E5F243C6C2100FFF46A /* LocationDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CFE2E5E243C6C2100FFF46A /* LocationDetailTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,7 +46,7 @@
 		0C8FC7372431CF4200859EB8 /* StrongTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrongTabBarController.swift; sourceTree = "<group>"; };
 		0C8FC7392431D29800859EB8 /* ToBeStrongViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToBeStrongViewController.swift; sourceTree = "<group>"; };
 		0C8FC73B2431DE3E00859EB8 /* StrongManPresentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrongManPresentViewController.swift; sourceTree = "<group>"; };
-		0C998490243C1500004FD0AA /* Motion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Motion.swift; sourceTree = "<group>"; };
+		0C998490243C1500004FD0AA /* MotionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionViewController.swift; sourceTree = "<group>"; };
 		0CAA1F82242DECF600A6825D /* StrongManContact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StrongManContact.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CAA1F85242DECF600A6825D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CAA1F87242DECF600A6825D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,8 @@
 		0CAA1FA6242DFA4400A6825D /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0CD007452432F9E600AFB4C7 /* StrongManIntroductionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrongManIntroductionViewController.swift; sourceTree = "<group>"; };
 		0CF04FE52434B60D00CBDC63 /* PersistentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentService.swift; sourceTree = "<group>"; };
+		0CFE2E5C243C5B2F00FFF46A /* YourLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourLocationViewController.swift; sourceTree = "<group>"; };
+		0CFE2E5E243C6C2100FFF46A /* LocationDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +117,9 @@
 				0C7ADAD324347655009E1601 /* LicenceViewController.swift */,
 				0C6E6D7724349E2F00D97DF9 /* Data.xcdatamodeld */,
 				0CF04FE52434B60D00CBDC63 /* PersistentService.swift */,
-				0C998490243C1500004FD0AA /* Motion.swift */,
+				0C998490243C1500004FD0AA /* MotionViewController.swift */,
+				0CFE2E5C243C5B2F00FFF46A /* YourLocationViewController.swift */,
+				0CFE2E5E243C6C2100FFF46A /* LocationDetailTableViewController.swift */,
 			);
 			path = "StrongMan-Contact";
 			sourceTree = "<group>";
@@ -199,10 +205,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C998491243C1500004FD0AA /* Motion.swift in Sources */,
+				0C998491243C1500004FD0AA /* MotionViewController.swift in Sources */,
 				0C7ADAD424347655009E1601 /* LicenceViewController.swift in Sources */,
 				0CAA1F8A242DECF600A6825D /* ViewController.swift in Sources */,
 				0CAA1F9D242DEE4C00A6825D /* StrongManData.swift in Sources */,
+				0CFE2E5D243C5B2F00FFF46A /* YourLocationViewController.swift in Sources */,
+				0CFE2E5F243C6C2100FFF46A /* LocationDetailTableViewController.swift in Sources */,
 				0C476099243341C9002645C1 /* AboutViewController.swift in Sources */,
 				0CF04FE62434B60D00CBDC63 /* PersistentService.swift in Sources */,
 				0C6E6D7E2434A02500D97DF9 /* StrongMan+CoreDataProperties.swift in Sources */,

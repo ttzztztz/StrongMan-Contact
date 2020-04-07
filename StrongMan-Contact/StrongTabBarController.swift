@@ -38,10 +38,19 @@ class StrongTabBarController: UITabBarController, UISplitViewControllerDelegate 
         return navController
     }()
     
+    let locationController: UIViewController = {
+        let controller = YourLocationViewController()
+        
+        let navController = UINavigationController(rootViewController: controller)
+        navController.tabBarItem = UITabBarItem(title: "Map", image: UIImage(systemName: "map"), selectedImage: UIImage(systemName: "map.fill"))
+        
+        return navController
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.viewControllers = [contactSplitViewController, aboutController, motionController]
+        self.viewControllers = [contactSplitViewController, aboutController, motionController, locationController]
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
