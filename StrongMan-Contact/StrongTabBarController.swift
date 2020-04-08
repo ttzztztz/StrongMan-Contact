@@ -9,6 +9,10 @@
 import UIKit
 
 class StrongTabBarController: UITabBarController, UISplitViewControllerDelegate {
+    public func setType(type: String) {
+        self.selectedIndex = Int(type) ?? 0
+    }
+    
     lazy var contactSplitViewController: UISplitViewController = {
         let navigationController = UINavigationController(rootViewController: ContactViewController())
         
@@ -50,7 +54,7 @@ class StrongTabBarController: UITabBarController, UISplitViewControllerDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.viewControllers = [contactSplitViewController, aboutController, motionController, locationController]
+        self.viewControllers = [contactSplitViewController, motionController, locationController, aboutController]
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {

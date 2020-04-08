@@ -12,10 +12,23 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let contactIcon = UIApplicationShortcutIcon(systemImageName: "book")
+        let contactItem = UIApplicationShortcutItem(type: "0", localizedTitle: "Contact", localizedSubtitle: "Powerful man", icon: contactIcon, userInfo: nil)
+        
+        let motionIcon = UIApplicationShortcutIcon(systemImageName: "flame")
+        let motionItem = UIApplicationShortcutItem(type: "1", localizedTitle: "Motion", localizedSubtitle: nil, icon: motionIcon, userInfo: nil)
+        
+        let mapIcon = UIApplicationShortcutIcon(systemImageName: "map")
+        let mapItem = UIApplicationShortcutItem(type: "2", localizedTitle: "Map", localizedSubtitle: nil, icon: mapIcon, userInfo: nil)
+        
+        let aboutIcon = UIApplicationShortcutIcon(systemImageName: "paperplane")
+        let aboutItem = UIApplicationShortcutItem(type: "3", localizedTitle: "About", localizedSubtitle: nil, icon: aboutIcon, userInfo: nil)
+        
+        
+        application.shortcutItems = [contactItem, motionItem, mapItem, aboutItem]
         return true
     }
-
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

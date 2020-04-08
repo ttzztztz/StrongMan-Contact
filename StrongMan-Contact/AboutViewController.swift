@@ -109,6 +109,45 @@ class AboutViewController: UIViewController {
         navigationController?.pushViewController(LicenceViewController(), animated: true)
     }
     
+    @objc func handleChangePhoto() {
+        let picker = UIImagePickerController()
+        
+        picker.delegate = self
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            picker.sourceType = .camera
+        } else {
+            picker.sourceType = .photoLibrary
+        }
+        
+        self.present(picker, animated: true)
+    }
+    
+    let changePhotoButton: UIButton = {
+        let button = UIButton(type: .system)
+        
+        button.setTitle("Change Photo", for: .normal)
+        button.addTarget(self, action: #selector(handleChangePhoto), for: .touchUpInside)
+        
+        return button
+    }()
+    
+    lazy var stackView: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [iconView, innerStackView])
+        
+        view.axis = .vertical
+        
+        return view
+    }()
+    
+    lazy var innerStackView: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [licenceButton, checkForUpdateButton, authButton, changePhotoButton])
+        
+        view.axis = .vertical
+        view.distribution = .fillEqually
+        
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -117,8 +156,6 @@ class AboutViewController: UIViewController {
         
         view.backgroundColor = .systemBackground
         
-        let stackView = UIStackView(arrangedSubviews: [iconView, licenceButton, checkForUpdateButton, authButton])
-        stackView.axis = .vertical
         view.addSubview(stackView)
         
         stackView.snp.makeConstraints { (make) -> Void in
@@ -134,5 +171,32 @@ class AboutViewController: UIViewController {
         spinner.snp.makeConstraints { (make) -> Void in
             make.edges.equalToSuperview()
         }
+    }
+    
+    @objc func handleOrientationChange() {
+        if UIDevice.current.orientation.isPortrait {
+            stackView.axis = .vertical
+        } else {
+            stackView.axis = .horizontal
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        NotificationCenter.default.addObserver(self, selector: #selector(handleOrientationChange), name: UIDevice.orientationDidChangeNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+    }
+}
+
+
+extension AboutViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let selectedImage = info[.originalImage] as? UIImage
+        if let selectedImage = selectedImage {
+            self.iconView.image = selectedImage
+        }
+        picker.dismiss(animated: true)
     }
 }
