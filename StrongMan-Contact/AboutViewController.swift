@@ -10,13 +10,41 @@ import UIKit
 import SnapKit
 import LocalAuthentication
 
-class AboutViewController: UIViewController {
-    let spinner = UIActivityIndicatorView(style: .large)
+class AboutViewController: UIViewController, UIGestureRecognizerDelegate {
+    private var previousScale = CGFloat(1)
+    private var scale = CGFloat(1)
+    private var previousRotation = CGFloat(1)
+    private var rotation = CGFloat(1)
     
-    let iconView: UIImageView = {
+    let spinner: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView(style: .large)
+        
+        view.backgroundColor = .systemFill
+        
+        return view
+    }()
+    
+    lazy var pinchGesture: UIPinchGestureRecognizer = {
+        let gesture = UIPinchGestureRecognizer(target: self, action: #selector(doPinch))
+        gesture.delegate = self
+        return gesture
+    }()
+    
+    lazy var rotateGesture: UIRotationGestureRecognizer = {
+        let gesture = UIRotationGestureRecognizer(target: self, action: #selector(doRotate))
+        gesture.delegate = self
+        return gesture
+    }()
+    
+    lazy var iconView: UIImageView = {
         let image = UIImageView(image: UIImage(named: "hzy"))
         
         image.sizeToFit()
+        image.isUserInteractionEnabled = true
+        
+        image.addGestureRecognizer(self.pinchGesture)
+        image.addGestureRecognizer(self.rotateGesture)
+        
         return image
     }()
     
@@ -187,6 +215,34 @@ class AboutViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
+    func transformImageView() {
+        var transform = CGAffineTransform(scaleX: previousScale * scale, y: previousScale * scale)
+        transform = transform.rotated(by: previousRotation + rotation)
+        iconView.transform = transform
+    }
+    
+    @objc func doPinch(_ gesture: UIPinchGestureRecognizer) {
+        scale = gesture.scale
+        transformImageView()
+        if gesture.state == .ended {
+            previousScale *= scale
+            scale = 1
+        }
+    }
+    
+    @objc func doRotate(_ gesture: UIRotationGestureRecognizer) {
+        rotation = gesture.rotation
+        transformImageView()
+        if gesture.state == .ended {
+            previousRotation *= rotation
+            rotation = 1
+        }
     }
 }
 
