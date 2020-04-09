@@ -10,6 +10,19 @@ import UIKit
 
 class ContactViewController: UITableViewController {
     let cellId = "hzytqlCell"
+    let searchController: UISearchController = {
+        let resultController = ContactSearchResultViewController()
+        let controller = UISearchController(searchResultsController: resultController)
+        
+        controller.searchResultsUpdater = resultController
+        
+        let searchBar = controller.searchBar
+        searchBar.placeholder = "Who do you want to find?"
+        searchBar.scopeButtonTitles = ["All", "Frontend", "Backend"]
+        searchBar.sizeToFit()
+        
+        return controller
+    }()
     
     func setToEditMode() {
         navigationItem.rightBarButtonItem = finishButton
@@ -89,6 +102,8 @@ class ContactViewController: UITableViewController {
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
         NotificationCenter.default.addObserver(self, selector: #selector(refreshData), name: NSNotification.Name(rawValue: "listDidChange"), object: nil)
+        
+        self.navigationItem.searchController = searchController
     }
     
     @objc func refreshData() {
@@ -178,4 +193,22 @@ class ContactViewController: UITableViewController {
         let actions = UISwipeActionsConfiguration(actions: [deleteAction, editAction])
         return actions
     }
+    
+//    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+//        var indexSet = Set<String>()
+//
+//        for item in StrongManData.strongManList {
+//            if let char = item.name?.first {
+//                indexSet.insert(String(char))
+//            }
+//        }
+//
+//        var indexArr = Array(indexSet)
+//        indexArr.sort()
+//        return indexArr
+//    }
+//
+//    override func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+//        return 0
+//    }
 }

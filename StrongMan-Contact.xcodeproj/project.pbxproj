@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0C476099243341C9002645C1 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C476098243341C9002645C1 /* AboutViewController.swift */; };
+		0C6786AF243EB5D200659256 /* ContactSearchResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6786AE243EB5D200659256 /* ContactSearchResultViewController.swift */; };
 		0C6941E72436DC4C001B37FF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C6941E32436D89C001B37FF /* Info.plist */; };
 		0C6E6D7A24349E2F00D97DF9 /* Data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C6E6D7724349E2F00D97DF9 /* Data.xcdatamodeld */; };
 		0C6E6D7D2434A02500D97DF9 /* StrongMan+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C6E6D7B2434A02500D97DF9 /* StrongMan+CoreDataClass.swift */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		0C476098243341C9002645C1 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		0C6786AE243EB5D200659256 /* ContactSearchResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactSearchResultViewController.swift; sourceTree = "<group>"; };
 		0C6941E82436DC96001B37FF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Info.plist; sourceTree = "<group>"; };
 		0C6E6D7824349E2F00D97DF9 /* StrongMan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StrongMan.xcdatamodel; sourceTree = "<group>"; };
 		0C6E6D7924349E2F00D97DF9 /* Data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Data.xcdatamodel; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				0C998490243C1500004FD0AA /* MotionViewController.swift */,
 				0CFE2E5C243C5B2F00FFF46A /* YourLocationViewController.swift */,
 				0CFE2E5E243C6C2100FFF46A /* LocationDetailTableViewController.swift */,
+				0C6786AE243EB5D200659256 /* ContactSearchResultViewController.swift */,
 			);
 			path = "StrongMan-Contact";
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				0C7ADAD424347655009E1601 /* LicenceViewController.swift in Sources */,
 				0CAA1F8A242DECF600A6825D /* ViewController.swift in Sources */,
 				0CAA1F9D242DEE4C00A6825D /* StrongManData.swift in Sources */,
+				0C6786AF243EB5D200659256 /* ContactSearchResultViewController.swift in Sources */,
 				0CFE2E5D243C5B2F00FFF46A /* YourLocationViewController.swift in Sources */,
 				0CFE2E5F243C6C2100FFF46A /* LocationDetailTableViewController.swift in Sources */,
 				0C476099243341C9002645C1 /* AboutViewController.swift in Sources */,
